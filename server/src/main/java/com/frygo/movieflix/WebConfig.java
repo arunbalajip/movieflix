@@ -1,4 +1,4 @@
-package com.frygo.movieflix.server;
+package com.frygo.movieflix;
 
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;

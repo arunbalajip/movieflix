@@ -1,6 +1,7 @@
 package com.frygo.movieflix.controller;
 
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,12 +16,14 @@ import com.frygo.movieflix.movie.entity.Movie;
 import com.frygo.movieflix.service.MovieService;
 @RestController
 @RequestMapping(path="movies")
+
 public class MovieController{
 
 	@Autowired
 	MovieService service;
 	@RequestMapping(method=RequestMethod.GET,produces=MediaType.APPLICATION_JSON_UTF8_VALUE)
 	public List<Movie> findAll(){
+		
 		return service.findAll();
 	}
 	@RequestMapping(method=RequestMethod.GET,path="{id}")
