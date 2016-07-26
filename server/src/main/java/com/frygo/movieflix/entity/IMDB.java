@@ -1,7 +1,18 @@
-package com.frygo.movieflix.movie.entity;
+package com.frygo.movieflix.entity;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+import org.hibernate.annotations.GenericGenerator;
+
+@Entity
+@Table
 public class IMDB {
-
+	@Id
+	@GenericGenerator(name="customUUID",strategy="uuid2")
+	@GeneratedValue(generator="customUUID")
 	private String id;
 	private String imdbID;
 	private String poster;

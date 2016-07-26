@@ -1,20 +1,48 @@
-package com.frygo.movieflix.movie.entity;
+package com.frygo.movieflix.entity;
 
 import java.util.List;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
+import javax.persistence.Table;
+
+import org.hibernate.annotations.GenericGenerator;
+
+import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
+@Entity
+@Table
 public class Movie {
+	@Id
+	@GenericGenerator(name="customUUID",strategy="uuid2")
+	@GeneratedValue(generator="customUUID")
 	private String id;
+	@Column(unique=true)
 	private String title;
+	@ManyToOne
 	private Year year;
+	@ManyToOne
 	private Rated rated;
+	@ManyToMany
 	private List<Genre> genres;
+	@ManyToOne
 	private Director director;
+	@ManyToMany
 	private List<Writer> writers;
+	@ManyToMany
 	private List<Actor> actors;
+	@ManyToMany
 	private List<Language> languages;
+	@ManyToMany
 	private List<Country> countries;
 	private String Awards;
+	@OneToOne
 	private IMDB imbd;
+	@OneToOne
 	private Type type;
 	
 	public String getId() {

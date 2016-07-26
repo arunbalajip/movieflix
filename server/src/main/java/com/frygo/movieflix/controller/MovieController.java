@@ -4,6 +4,9 @@ package com.frygo.movieflix.controller;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -12,7 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.frygo.movieflix.movie.entity.Movie;
+import com.frygo.movieflix.entity.Movie;
 import com.frygo.movieflix.service.MovieService;
 @RestController
 @RequestMapping(path="movies")
@@ -46,5 +49,6 @@ public class MovieController{
 	@RequestMapping(method=RequestMethod.DELETE,path="{id}")
 	public void delete(@PathVariable("id") String id){
 		service.delete(id);
-	}	
+	}
+	
 }
