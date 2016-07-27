@@ -5,17 +5,26 @@ import java.util.List;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
 import org.hibernate.annotations.GenericGenerator;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 @Entity
 @Table
+@NamedQueries({ 
+	@NamedQuery(name = "Movie.findAll", query = "SELECT m FROM Movie m ORDER BY m.title ASC"),
+	@NamedQuery(name = "Movie.findByTitle", query = "SELECT m FROM Movie m WHERE m.title=:mtitle") 
+})
 public class Movie {
 	@Id
 	@GenericGenerator(name = "customUUID", strategy = "uuid2")
@@ -28,6 +37,7 @@ public class Movie {
 	@ManyToOne(cascade = {CascadeType.ALL})
 	private Rated rated;
 	@ManyToMany(cascade = {CascadeType.ALL})
+	
 	private List<Genre> genres;
 	@OneToOne(cascade = {CascadeType.ALL})
 	Cast cast;
@@ -38,8 +48,10 @@ public class Movie {
 		this.cast = cast;
 	}
 	@ManyToMany(cascade = {CascadeType.ALL})
+
 	private List<Language> languages;
 	@ManyToMany(cascade = {CascadeType.ALL})
+	
 	private List<Country> countries;
 	private String Awards;
 	@OneToOne(cascade = {CascadeType.ALL})

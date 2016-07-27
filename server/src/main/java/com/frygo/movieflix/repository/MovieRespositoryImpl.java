@@ -1,14 +1,16 @@
 package com.frygo.movieflix.repository;
 
-import java.util.ArrayList;
+
+
 import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.PersistenceContextType;
 import javax.persistence.Table;
+import javax.persistence.TypedQuery;
 
-import org.springframework.context.annotation.ComponentScan;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -18,18 +20,12 @@ import com.frygo.movieflix.entity.Movie;
 
 public class MovieRespositoryImpl implements MovieRepository {
 
-	@PersistenceContext
+	@PersistenceContext(type = PersistenceContextType.EXTENDED)
 	private EntityManager em;
 	@Override
 	public List<Movie> findAll() {
-		/*Movie movie = new Movie();
-		movie.setId(String.valueOf(em.find(newtable.class, 1).getid()));
-		//em.persist(movie);
-	List<Movie> list = new ArrayList<>();
-	list.add(movie);
-		// TODO Auto-generated method stub
-		return list;*/
-		return null;
+		TypedQuery<Movie> query = em.createNamedQuery("Movie.findAll", Movie.class);
+		return query.getResultList();
 	}
 
 	@Override
