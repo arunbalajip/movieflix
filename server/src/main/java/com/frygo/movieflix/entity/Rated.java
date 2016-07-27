@@ -7,6 +7,8 @@ import javax.persistence.Table;
 
 import org.hibernate.annotations.GenericGenerator;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+
 @Entity
 @Table
 public class Rated {
@@ -14,17 +16,24 @@ public class Rated {
 	@GenericGenerator(name="customUUID",strategy="uuid2")
 	@GeneratedValue(generator="customUUID")
 	private String id;
-	private String rated;
+	private String value;
+	Rated(){
+		
+	}
+	
 	public String getId() {
 		return id;
 	}
 	public void setId(String id) {
 		this.id = id;
 	}
-	public String getRated() {
-		return rated;
+
+	public String getValue() {
+		return value;
 	}
-	public void setRated(String rated) {
-		this.rated = rated;
+
+	public void setValue(String value) {
+		this.value = value;
 	}
+
 }

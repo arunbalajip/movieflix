@@ -13,17 +13,18 @@ public class Language {
 	@GenericGenerator(name="customUUID",strategy="uuid2")
 	@GeneratedValue(generator="customUUID")
 	private String id;
-	private String language;
+	private String value;
 	public String getId() {
 		return id;
 	}
 	public void setId(String id) {
 		this.id = id;
 	}
-	public String getLanguage() {
-		return language;
+	public String getValue() {
+		return value;
 	}
-	public void setLanguage(String language) {
-		this.language = language;
+
+	public void setValue(String value) {
+		this.value = value;
 	}
 }

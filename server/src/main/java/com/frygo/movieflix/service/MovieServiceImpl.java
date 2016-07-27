@@ -29,11 +29,12 @@ public class MovieServiceImpl implements MovieService{
 
 	@Override
 	public Movie create(Movie movie) {
-		Movie existing = respository.findByTitle(movie.getTitle());
+		/*Movie existing = respository.findByTitle(movie.getTitle());
 		if(existing ==null){
 			throw new MovieAlreadyExistsException("Movie "+ movie.getTitle() + " is already in use");
-		}
-		return existing;
+		}*/
+		
+		return respository.create(movie);
 	}
 
 	@Override

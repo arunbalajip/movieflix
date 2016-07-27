@@ -41,7 +41,12 @@ public class MovieRespositoryImpl implements MovieRepository {
 
 	@Override
 	public Movie create(Movie movie) {
+
 		em.persist(movie);
+		System.out.println(movie.getId()+" "+movie.getTitle());
+		System.out.println();
+		System.out.println();
+		
 		return movie;
 	}
 

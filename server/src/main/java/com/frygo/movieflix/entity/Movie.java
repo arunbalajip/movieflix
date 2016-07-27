@@ -2,11 +2,11 @@ package com.frygo.movieflix.entity;
 
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-
 import javax.persistence.Table;
 
 import org.hibernate.annotations.GenericGenerator;
@@ -18,31 +18,33 @@ import javax.persistence.OneToOne;
 @Table
 public class Movie {
 	@Id
-	@GenericGenerator(name="customUUID",strategy="uuid2")
-	@GeneratedValue(generator="customUUID")
+	@GenericGenerator(name = "customUUID", strategy = "uuid2")
+	@GeneratedValue(generator = "customUUID")
 	private String id;
-	@Column(unique=true)
+
 	private String title;
-	@ManyToOne
+	@ManyToOne(cascade = {CascadeType.ALL})
 	private Year year;
-	@ManyToOne
+	@ManyToOne(cascade = {CascadeType.ALL})
 	private Rated rated;
-	@ManyToMany
+	@ManyToMany(cascade = {CascadeType.ALL})
 	private List<Genre> genres;
-	@ManyToOne
-	private Director director;
-	@ManyToMany
-	private List<Writer> writers;
-	@ManyToMany
-	private List<Actor> actors;
-	@ManyToMany
+	@OneToOne(cascade = {CascadeType.ALL})
+	Cast cast;
+	public Cast getCast() {
+		return cast;
+	}
+	public void setCast(Cast cast) {
+		this.cast = cast;
+	}
+	@ManyToMany(cascade = {CascadeType.ALL})
 	private List<Language> languages;
-	@ManyToMany
+	@ManyToMany(cascade = {CascadeType.ALL})
 	private List<Country> countries;
 	private String Awards;
-	@OneToOne
+	@OneToOne(cascade = {CascadeType.ALL})
 	private IMDB imbd;
-	@OneToOne
+	@OneToOne(cascade = {CascadeType.ALL})
 	private Type type;
 	
 	public String getId() {
@@ -75,24 +77,7 @@ public class Movie {
 	public void setGenres(List<Genre> genres) {
 		this.genres = genres;
 	}
-	public Director getDirector() {
-		return director;
-	}
-	public void setDirector(Director director) {
-		this.director = director;
-	}
-	public List<Writer> getWriters() {
-		return writers;
-	}
-	public void setWriters(List<Writer> writers) {
-		this.writers = writers;
-	}
-	public List<Actor> getActors() {
-		return actors;
-	}
-	public void setActors(List<Actor> actors) {
-		this.actors = actors;
-	}
+
 	public List<Language> getLanguages() {
 		return languages;
 	}

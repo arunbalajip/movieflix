@@ -13,17 +13,18 @@ public class Year {
 	@GenericGenerator(name="customUUID",strategy="uuid2")
 	@GeneratedValue(generator="customUUID")
 	private String id;
-	private short year;
+	private short value;
 	public String getId() {
 		return id;
 	}
 	public void setId(String id) {
 		this.id = id;
 	}
-	public short getYear() {
-		return year;
+	public short getValue() {
+		return value;
 	}
-	public void setYear(short year) {
-		this.year = year;
+
+	public void setValue(short value) {
+		this.value = value;
 	}
 }

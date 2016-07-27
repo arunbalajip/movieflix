@@ -13,17 +13,22 @@ public class Genre {
 	@GenericGenerator(name="customUUID",strategy="uuid2")
 	@GeneratedValue(generator="customUUID")
 	private String id;
-	private String genre;
+	private String value;
 	public String getId() {
 		return id;
 	}
 	public void setId(String id) {
 		this.id = id;
 	}
-	public String getGenre() {
-		return genre;
+	/**
+	 * @return the name
+	 */
+	public String getValue() {
+		return value;
 	}
-	public void setGenre(String genre) {
-		this.genre = genre;
+
+	public void setValue(String value) {
+		this.value = value;
 	}
+	
 }

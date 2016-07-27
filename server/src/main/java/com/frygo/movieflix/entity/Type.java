@@ -13,7 +13,7 @@ public class Type {
 	@GenericGenerator(name="customUUID",strategy="uuid2")
 	@GeneratedValue(generator="customUUID")
 	private String id;
-	private String type;
+	private String value;
 	
 	public String getId() {
 		return id;
@@ -21,10 +21,11 @@ public class Type {
 	public void setId(String id) {
 		this.id = id;
 	}
-	public String getType() {
-		return type;
+	public String getValue() {
+		return value;
 	}
-	public void setType(String type) {
-		this.type = type;
+
+	public void setValue(String value) {
+		this.value = value;
 	}
 }
