@@ -13,7 +13,7 @@ import org.hibernate.annotations.GenericGenerator;
 @Table
 @NamedQueries({ 
 	@NamedQuery(name = "User.findAll", query = "SELECT u FROM User u "),
-
+	@NamedQuery(name = "User.findByUsername", query = "SELECT u FROM User u WHERE u.username=:uusername") 
 })
 public class User {
 	@Id

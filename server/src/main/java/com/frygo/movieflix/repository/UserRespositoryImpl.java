@@ -49,13 +49,18 @@ public class UserRespositoryImpl implements UserRepository {
 
 	@Override
 	public void delete(User id) {
-		em.remove(em);
+		em.remove(id);
 		
 	}
 
 	@Override
 	public User findByUserName(String username) {
-		// TODO Auto-generated method stub
-		return new User();
+		TypedQuery<User> query = em.createNamedQuery("User.findByUsername", User.class);
+		query.setParameter("uusername", username);
+		List<User> users = query.getResultList();
+		if ( users != null &&  users.size() == 1) {
+			return  users.get(0);
+		}
+		return null;
 	}
 }

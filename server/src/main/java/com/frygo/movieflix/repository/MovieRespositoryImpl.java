@@ -49,13 +49,18 @@ public class MovieRespositoryImpl implements MovieRepository {
 
 	@Override
 	public void delete(Movie id) {
-		em.remove(em);
+		em.remove(id);
 		
 	}
 
 	@Override
 	public Movie findByTitle(String title) {
-		// TODO Auto-generated method stub
-		return new Movie();
+		TypedQuery<Movie> query = em.createNamedQuery("Movie.findByTitle", Movie.class);
+		query.setParameter("mtitle", title);
+		List<Movie> movies = query.getResultList();
+		if (movies != null && movies.size() == 1) {
+			return movies.get(0);
+		}
+		return null;
 	}
 }
