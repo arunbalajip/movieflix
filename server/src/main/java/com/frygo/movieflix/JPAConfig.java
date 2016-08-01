@@ -25,12 +25,13 @@ public class JPAConfig {
 	public LocalContainerEntityManagerFactoryBean entityManagerFactory() {
 		LocalContainerEntityManagerFactoryBean emf = new LocalContainerEntityManagerFactoryBean();
 		emf.setDataSource(dataSource());
-		emf.setPackagesToScan("com.frygo.movieflix.entity");
+		String[] packageToScan = new String[2];
+		packageToScan[0] = "com.frygo.movieflix.movie.entity";
+		packageToScan[1] = "com.frygo.movieflix.user.entity";
+		emf.setPackagesToScan(packageToScan);
 		JpaVendorAdapter adapter = new HibernateJpaVendorAdapter();
 		emf.setJpaVendorAdapter(adapter);
 		emf.setJpaProperties(properties());
-		
-		System.out.println("entityManagerFactory");
 		return emf;
 	}
 
