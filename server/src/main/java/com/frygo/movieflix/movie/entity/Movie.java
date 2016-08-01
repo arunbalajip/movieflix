@@ -29,7 +29,6 @@ public class Movie {
 	@Id
 	@GenericGenerator(name = "customUUID", strategy = "uuid2")
 	@GeneratedValue(generator = "customUUID")
-	@JsonIgnore
 	private String id;
 
 	private String title;
