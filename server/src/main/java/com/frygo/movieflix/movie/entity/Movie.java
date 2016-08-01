@@ -10,6 +10,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import org.hibernate.annotations.GenericGenerator;
@@ -41,6 +42,15 @@ public class Movie {
 	private List<Genre> genres;
 	@OneToOne(cascade = {CascadeType.ALL})
 	Cast cast;
+	@OneToMany
+	List<MovieReview> userreviews;
+	
+	public List<MovieReview> getUserreviews() {
+		return userreviews;
+	}
+	public void setUserreviews(List<MovieReview> userreviews) {
+		this.userreviews = userreviews;
+	}
 	public Cast getCast() {
 		return cast;
 	}
