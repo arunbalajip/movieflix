@@ -24,7 +24,7 @@ public class UserRespositoryImpl implements UserRepository {
 	private EntityManager em;
 	@Override
 	public List<User> findAll() {
-		TypedQuery<User> query = em.createNamedQuery("Movie.findAll", User.class);
+		TypedQuery<User> query = em.createNamedQuery("User.findAll", User.class);
 		return query.getResultList();
 	}
 

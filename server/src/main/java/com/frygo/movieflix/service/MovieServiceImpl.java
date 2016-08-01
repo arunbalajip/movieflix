@@ -30,7 +30,7 @@ public class MovieServiceImpl implements MovieService{
 	@Override
 	public Movie create(Movie movie) {
 		Movie existing = respository.findByTitle(movie.getTitle());
-		if(existing ==null){
+		if(existing !=null){
 			throw new AlreadyExistsException("Movie "+ movie.getTitle() + " is already in use");
 		}
 		

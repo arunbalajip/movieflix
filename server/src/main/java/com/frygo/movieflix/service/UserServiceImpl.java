@@ -30,7 +30,7 @@ public class UserServiceImpl implements UserService{
 	@Override
 	public User create(User user) {
 		User existing = respository.findByUserName(user.getUsername());
-		if(existing ==null){
+		if(existing !=null){
 			throw new AlreadyExistsException("UserName "+ user.getUsername() + " is already in use");
 		}
 		
