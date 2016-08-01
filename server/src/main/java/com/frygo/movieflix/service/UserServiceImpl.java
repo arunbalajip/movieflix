@@ -50,7 +50,7 @@ public class UserServiceImpl implements UserService{
 	public void delete(String id) {
 		User existing = respository.findOne(id);
 		if(existing ==null){
-			throw new NotFoundException("Movie "+ id + " not found");
+			throw new NotFoundException("User "+ id + " not found");
 		}
 		respository.delete(existing);
 	}

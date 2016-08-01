@@ -36,9 +36,9 @@ public class UserRespositoryImpl implements UserRepository {
 
 
 	@Override
-	public User create(User movie) {
-		em.persist(movie);		
-		return movie;
+	public User create(User user) {
+		em.persist(user);		
+		return user;
 	}
 
 	@Override

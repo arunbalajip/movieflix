@@ -1,11 +1,7 @@
 package com.frygo.movieflix.controller;
 
 
-import java.util.ArrayList;
 import java.util.List;
-
-import javax.persistence.Entity;
-import javax.persistence.Table;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
