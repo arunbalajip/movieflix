@@ -14,7 +14,7 @@ import javax.persistence.TypedQuery;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.frygo.movieflix.entity.Movie;
+import com.frygo.movieflix.movie.entity.Movie;
 @Repository
 @Transactional
 
@@ -37,12 +37,7 @@ public class MovieRespositoryImpl implements MovieRepository {
 
 	@Override
 	public Movie create(Movie movie) {
-
-		em.persist(movie);
-		System.out.println(movie.getId()+" "+movie.getTitle());
-		System.out.println();
-		System.out.println();
-		
+		em.persist(movie);		
 		return movie;
 	}
 
@@ -62,17 +57,5 @@ public class MovieRespositoryImpl implements MovieRepository {
 	public Movie findByTitle(String title) {
 		// TODO Auto-generated method stub
 		return new Movie();
-	}
-	@Entity
-	@Table
-	class newtable{
-		int id;
-		public int getid(){
-			return id;
-		}
-		public void setid(int id){
-			this.id = id;
-		
-		}
 	}
 }

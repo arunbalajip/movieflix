@@ -1,4 +1,4 @@
-package com.frygo.movieflix.entity;
+package com.frygo.movieflix.movie.entity;
 
 import java.util.List;
 
@@ -13,18 +13,22 @@ import javax.persistence.Table;
 
 import org.hibernate.annotations.GenericGenerator;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 @Table
 public class Cast {
 	@Id
 	@GenericGenerator(name = "customUUID", strategy = "uuid2")
 	@GeneratedValue(generator = "customUUID")
+	@JsonIgnore
 	private String id;
 	@ManyToOne(cascade = {CascadeType.ALL})
 	private Director director;
 	@ManyToMany(cascade = {CascadeType.ALL})
 	private List<Writer> writers;
 	@ManyToMany(cascade = {CascadeType.ALL})
+	@Column (unique=true)
 	private List<Actor> actors;
 	public String getId() {
 		return id;

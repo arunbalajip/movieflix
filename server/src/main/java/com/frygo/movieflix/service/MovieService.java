@@ -2,7 +2,7 @@ package com.frygo.movieflix.service;
 
 import java.util.List;
 
-import com.frygo.movieflix.entity.Movie;
+import com.frygo.movieflix.movie.entity.Movie;
 
 public interface MovieService {
 	public List<Movie> findAll();

@@ -2,7 +2,7 @@ package com.frygo.movieflix.repository;
 
 import java.util.List;
 
-import com.frygo.movieflix.entity.Movie;
+import com.frygo.movieflix.movie.entity.Movie;
 
 public interface MovieRepository {
 	public List<Movie> findAll();

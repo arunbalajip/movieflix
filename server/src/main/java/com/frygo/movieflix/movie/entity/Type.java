@@ -1,4 +1,4 @@
-package com.frygo.movieflix.entity;
+package com.frygo.movieflix.movie.entity;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -6,14 +6,18 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 import org.hibernate.annotations.GenericGenerator;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 @Entity
 @Table
-public class Country {
+public class Type {
 	@Id
 	@GenericGenerator(name="customUUID",strategy="uuid2")
 	@GeneratedValue(generator="customUUID")
+	@JsonIgnore
 	private String id;
 	private String value;
+	
 	public String getId() {
 		return id;
 	}

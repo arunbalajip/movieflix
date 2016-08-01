@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.frygo.movieflix.entity.Movie;
+import com.frygo.movieflix.movie.entity.Movie;
 import com.frygo.movieflix.service.MovieService;
 @RestController
 @RequestMapping(path="movies")
@@ -33,11 +33,6 @@ public class MovieController{
 	public Movie findOne(@PathVariable("id")String id){
 		return service.findOne(id);
 	}
-	/*
-	@RequestMapping(method=RequestMethod.GET)
-	public Movie findOne(@RequestParam("search")String str){
-		return null;
-	}*/
 	@RequestMapping(method=RequestMethod.POST,produces=MediaType.APPLICATION_JSON_UTF8_VALUE,consumes=MediaType.APPLICATION_JSON_UTF8_VALUE)
 	public Movie create(@RequestBody Movie movie){
 		return service.create(movie);

@@ -5,9 +5,9 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.frygo.movieflix.entity.Movie;
 import com.frygo.movieflix.exception.MovieAlreadyExistsException;
 import com.frygo.movieflix.exception.MovieNotFoundException;
+import com.frygo.movieflix.movie.entity.Movie;
 import com.frygo.movieflix.repository.MovieRepository;
 @Service
 public class MovieServiceImpl implements MovieService{
@@ -29,10 +29,10 @@ public class MovieServiceImpl implements MovieService{
 
 	@Override
 	public Movie create(Movie movie) {
-		/*Movie existing = respository.findByTitle(movie.getTitle());
+		Movie existing = respository.findByTitle(movie.getTitle());
 		if(existing ==null){
 			throw new MovieAlreadyExistsException("Movie "+ movie.getTitle() + " is already in use");
-		}*/
+		}
 		
 		return respository.create(movie);
 	}
