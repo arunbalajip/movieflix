@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>MovieFlix</title>
+    <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
+    <link href='https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css' rel='stylesheet'
+          type='text/css'>
+    <link href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css' rel='stylesheet' type='text/css'>
+    <link href='styles/index.css' rel='stylesheet'/>
+</head>
+<body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<header>
+    <span id="logo">MovieFlix.com</span>
+    <span id="caption"> THE WORLD'S LARGEST ENTERTAINMENT SITE </span>
+</header>
+<nav>
+    <span class="fa fa-home icon positionitem" aria-hidden="true"></span>
+    <span class="fa fa-file-video-o icon positionitem" aria-hidden="true"></span>
+    <span class="menu">Movies</span>
+    <i class="fa fa-television icon  positionitem" aria-hidden="true"></i>
+    <span class="menu">Tv Series</span>
+    <span class="fa fa-user icon usericon" aria-hidden="true"></span>
+    <span class="icon usericon menu positionitem">Username</span>
+    <span class="fa fa-bell-o icon usericon positionitem" aria-hidden="true"></span>
+    <span class=" icon usericon menu">Search</span>
+    <span class="fa fa-search icon usericon" aria-hidden="true"></span>
+</nav>
+
+<section>
+    <button type="button" class="btn btn-primary">Top Rated Movies</button>
+
+    <button type="button" class="btn btn-info">Top Rated TV Series</button>
+
+    <input type="text" class="form-control" placeholder="Search By Type">
+
+    <input type="text" class="form-control" placeholder="Search By Year">
+
+    <input type="text" class="form-control" placeholder="Search By Genre">
+
+    <input type="text" class="form-control" placeholder="Free text">
+    <select class="form-control">
+        <option>Sort by</option>
+        <option>IMDB Rating</option>
+        <option>Year</option>
+        <option>IMDB Votes</option>
+    </select>
+</section>
+
+<div class="container ">
+    <div class="row">
+
+        <div class="col-xs-12 col-sm-4 col-md-3">
+
+            <div class="imbdbadge "><img src="assets/images/imbdstar.png"/>8.3/10</div>
+            <div class="newbadge"><img src="assets/images/new.gif"/></div>
+            <div class="titlebox"></div>
+            <div class="title"><b>Title:</b> WhiteCollar</div>
+
+            <button type="button" class="btn btn-default expand-collapse" data-toggle="collapse" data-target="#ginfo">
+                Full cast and Crew <span class="caret"></span></button>
+            <div id="ginfo" class="collapse well well-sm">
+                <div class="year"><b>Year:</b> 2009</div>
+                <div class="genre"><b>Genre:</b> Comedy, Crime, Drama, Mystery</div>
+                <div class="director"><b>Director:</b> Jeff Eastin</div>
+                <div class="cast"><b>Cast:</b> John T. Kretchmer, Russell Lee Fine, JPaul Holahan, Michael Smith,
+                    Sanford
+                    Bookstaver
+                </div>
+                <div class="plot"><b>Plot:</b>The unlikely partnership between charming con artist Neal Caffrey and
+                    straightman FBI agent Peter Burke. Caffrey provides his expertise to help Burke catch other elusive
+                    criminals in exchange for his freedom, and together they prove that to solve the hardest crimes, you
+                    must hire the smartest criminal. Written by Twentieth Century Fox
+                </div>
+            </div>
+
+            <button type="button" class="btn btn-default expand-collapse" data-toggle="collapse"
+                    data-target="#imdbinfo">IMDB info<span class="caret"></span></button>
+            <div id="imdbinfo" class="collapse well well-sm">
+                <div class="imdbrating"><b>IMDBRating</b> : 8.3</div>
+                <div class="imdbvotes"><b>IMDBVotes</b> 370,909</div>
+                <div class="imdbID"><b>imdbID</b> tt2395427</div>
+            </div>
+            <button type="button" class="btn btn-default expand-collapse" data-toggle="collapse"
+                    data-target="#userreviews">User Reviews<span class="caret"></span></button>
+            <div id="userreviews" class="collapse well well-sm">
+                Very clever and has your rooting for both the good guys (FBI) and the bad guy (Neal in this case). The
+                pairing of the FBI couple is just right and of course Matt as the con reminds me so much of Pierce
+                Brosnan in the movie "After the Sunset" in which he played a perfect con man and there grew to be a
+                grudging respect between the con and the FBI guy (Woody).
+                I can see that happening here too and if this lives up to the first few episodes, I'll be tuning in each
+                week as this show is refreshing. I'm tired of the gore in many of the top crime shows. I actually taped
+                this and showed the first two episodes to a few friends that hadn't heard of it and now I have them
+                hooked on it and they want to watch it each week. Let's hope the networks finally realize the gore is
+                getting to be too much and this type of show really works and let's hope it lasts a long time.
+            </div>
+
+            <button type="button" class="btn btn-default expand-collapse" data-toggle="collapse"
+                    data-target="#userinput">User Comments<span class="caret"></span></button>
+            <div id="userinput" class="collapse well well-sm">
+                <div id="comment-message" class="form-row">
+                    <textarea name = "comment" placeholder = "Message" id = "comment" ></textarea>
+                    <button type="button" class="btn btn-default">Submit</button>
+                </div>
+            </div>
+
+
+
+            <div class=""></div>
+        </div>
+        <div class="col-xs-12 col-sm-4 col-md-3 box">
+            <div class="titlebox"></div>
+        </div>
+        <div class="col-xs-12 col-sm-4 col-md-3 box">
+            <div class="titlebox"></div>
+        </div>
+        <div class="col-xs-12 col-sm-4 col-md-3 box ">
+            <div class="titlebox"></div>
+        </div>
+        <div class="col-xs-12 col-sm-4 col-md-3 box">
+            <div class="titlebox"></div>
+        </div>
+        <div class="col-xs-12 col-sm-4 col-md-3 box">
+            <div class="titlebox"></div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+</body>
+</html>

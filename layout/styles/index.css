@@ -1,0 +1,106 @@
+*{
+    box-sizing: border-box;
+}
+header{
+    color:black;
+    margin:10px 10px 0px;
+
+}
+#logo{
+    font-family: 'Architects Daughter', cursive;
+    font-size: 2.5em;
+    padding: 15px 35px 0px;
+}
+#caption{
+    float:right;
+    font-size: 1.5em;
+    padding:15px 10px 0px;
+}
+.icon{
+    font-size: 2em;
+    margin: 10px 10px 0px;
+}
+.usericon{
+    float:right;
+    margin-left:0px;
+    padding-left:0px;
+}
+nav {
+    background-color: #5f5f5f;
+    height: 50px;
+    width: 100%;
+    float: right;
+    color: white;
+    padding:0px 10px ;
+    font-family:'FontAwesome'
+}
+.positionitem{
+    margin-right:5px;
+    margin-left:30px;
+}
+.menu{
+    font-size: 1.5em;
+}
+.container{
+    padding-top: 25px;
+}
+.col-xs-6 ,.col-sm-4 ,.col-md-3{
+    padding:10px;
+    height: 500px;
+    border:0.5px solid black;
+    overflow-y: scroll;
+}
+.titlebox{
+    background-image: url("https://art-s.nflximg.net/09d74/8f841a157d4f77c3b1b94536a65a357b51409d74.webp");
+    background-size: cover ;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    min-height: 100px;
+
+}
+section {
+    padding-top: 80px;
+    padding-left:40px;
+
+
+}
+section *{
+    margin-bottom: 15px;
+    margin-right:10px;
+}
+.form-control{
+    display: inline;
+    width:auto;
+}
+.imbdbadge{
+    background-color: blueviolet;
+    left: 0;
+    top: 20px;
+    opacity: 0.6;
+    z-index: 1;
+    color:white;
+    padding: 4px;
+    position: absolute;
+    font-weight: 500;
+}
+.imbdbadge img{
+    width: 25px;
+    height:20px;
+    padding-right: 5px;
+}
+.newbadge{
+    right: 0;
+    top: 5px;
+    z-index: 1;
+    padding: 4px;
+    position: absolute;
+}
+.newbadge img{
+    width: 50px;
+    height:30px;
+}
+.expand-collapse{
+    display: block;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
