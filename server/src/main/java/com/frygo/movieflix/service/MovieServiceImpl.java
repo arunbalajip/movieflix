@@ -1,5 +1,6 @@
 package com.frygo.movieflix.service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,6 +9,7 @@ import org.springframework.stereotype.Service;
 import com.frygo.movieflix.exception.AlreadyExistsException;
 import com.frygo.movieflix.exception.NotFoundException;
 import com.frygo.movieflix.movie.entity.Movie;
+import com.frygo.movieflix.movie.entity.MovieReview;
 import com.frygo.movieflix.repository.MovieRepository;
 @Service
 public class MovieServiceImpl implements MovieService{
@@ -43,6 +45,7 @@ public class MovieServiceImpl implements MovieService{
 		if(existing ==null){
 			throw new NotFoundException("Movie "+ id + " not found");
 		}
+
 		return respository.update(id, movie);
 	}
 

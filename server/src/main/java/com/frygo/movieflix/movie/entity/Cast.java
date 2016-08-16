@@ -23,35 +23,33 @@ public class Cast {
 	@GeneratedValue(generator = "customUUID")
 	@JsonIgnore
 	private String id;
-	@ManyToOne(cascade = {CascadeType.ALL})
-	private Director director;
-	@ManyToMany(cascade = {CascadeType.ALL})
-	private List<Writer> writers;
-	@ManyToMany(cascade = {CascadeType.ALL})
-	@Column (unique=true)
-	private List<Actor> actors;
+	
+	private String director;
+
+	private String writers;
+	private String actors;
 	public String getId() {
 		return id;
 	}
 	public void setId(String id) {
 		this.id = id;
 	}
-	public Director getDirector() {
+	public String getDirector() {
 		return director;
 	}
-	public void setDirector(Director director) {
+	public void setDirector(String director) {
 		this.director = director;
 	}
-	public List<Writer> getWriters() {
+	public String getWriters() {
 		return writers;
 	}
-	public void setWriters(List<Writer> writers) {
+	public void setWriters(String writers) {
 		this.writers = writers;
 	}
-	public List<Actor> getActors() {
+	public String getActors() {
 		return actors;
 	}
-	public void setActors(List<Actor> actors) {
+	public void setActors(String actors) {
 		this.actors = actors;
 	}
 	

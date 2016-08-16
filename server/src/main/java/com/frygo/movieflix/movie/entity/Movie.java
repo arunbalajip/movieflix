@@ -20,12 +20,12 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
+
 @Entity
 @Table
-@NamedQueries({ 
-	@NamedQuery(name = "Movie.findAll", query = "SELECT m FROM Movie m ORDER BY m.title ASC"),
-	@NamedQuery(name = "Movie.findByTitle", query = "SELECT m FROM Movie m WHERE m.title=:mtitle") 
-})
+@NamedQueries({
+		@NamedQuery(name = "Movie.findAll", query = "SELECT m FROM Movie m ORDER BY m.title ASC"),
+		@NamedQuery(name = "Movie.findByTitle", query = "SELECT m FROM Movie m WHERE m.title=:mtitle") })
 public class Movie {
 	@Id
 	@GenericGenerator(name = "customUUID", strategy = "uuid2")
@@ -33,100 +33,122 @@ public class Movie {
 	private String id;
 
 	private String title;
-	@ManyToOne(cascade = {CascadeType.ALL})
-	private Year year;
-	@ManyToOne(cascade = {CascadeType.ALL})
-	private Rated rated;
-	@ManyToMany(cascade = {CascadeType.ALL})
-	
-	private List<Genre> genres;
-	@OneToOne(cascade = {CascadeType.ALL})
+
+	private Integer year;
+
+	private String rated;
+
+	private String genre;
+	@OneToOne(cascade = { CascadeType.ALL })
 	Cast cast;
-	@OneToMany
+
+	@OneToMany(cascade = { CascadeType.ALL })
 	List<MovieReview> userreviews;
-	
+
 	public List<MovieReview> getUserreviews() {
 		return userreviews;
 	}
+
 	public void setUserreviews(List<MovieReview> userreviews) {
 		this.userreviews = userreviews;
 	}
+
 	public Cast getCast() {
 		return cast;
 	}
+
 	public void setCast(Cast cast) {
 		this.cast = cast;
 	}
-	@ManyToMany(cascade = {CascadeType.ALL})
 
-	private List<Language> languages;
-	@ManyToMany(cascade = {CascadeType.ALL})
-	
-	private List<Country> countries;
+	@ManyToOne(cascade = { CascadeType.ALL })
+	private Language languages;
+
+	@ManyToOne(cascade = { CascadeType.ALL })
+	private Country countries;
+
 	private String Awards;
-	@OneToOne(cascade = {CascadeType.ALL})
+	@OneToOne(cascade = { CascadeType.ALL })
 	private IMDB imbd;
-	@OneToOne(cascade = {CascadeType.ALL})
+	@OneToOne(cascade = { CascadeType.ALL })
 	private Type type;
-	
+
 	public String getId() {
 		return id;
 	}
+
 	public void setId(String id) {
 		this.id = id;
 	}
+
 	public String getTitle() {
 		return title;
 	}
+
 	public void setTitle(String title) {
 		this.title = title;
 	}
-	public Year getYear() {
+
+	public Integer getYear() {
 		return year;
 	}
-	public void setYear(Year year) {
+
+	public void setYear(Integer year) {
 		this.year = year;
 	}
-	public Rated getRated() {
+
+	public String getRated() {
 		return rated;
 	}
-	public void setRated(Rated rated) {
+
+	public void setRated(String rated) {
 		this.rated = rated;
 	}
-	public List<Genre> getGenres() {
-		return genres;
-	}
-	public void setGenres(List<Genre> genres) {
-		this.genres = genres;
+
+	public String getGenres() {
+		return genre;
 	}
 
-	public List<Language> getLanguages() {
+	public void setGenres(String genres) {
+		this.genre = genres;
+	}
+
+	public Language getLanguages() {
 		return languages;
 	}
-	public void setLanguages(List<Language> languages) {
+
+	public void setLanguages(Language languages) {
 		this.languages = languages;
 	}
-	public List<Country> getCountries() {
+
+	public Country getCountries() {
 		return countries;
 	}
-	public void setCountries(List<Country> countries) {
+
+	public void setCountries(Country countries) {
 		this.countries = countries;
 	}
+
 	public String getAwards() {
 		return Awards;
 	}
+
 	public void setAwards(String awards) {
 		Awards = awards;
 	}
+
 	public IMDB getImbd() {
 		return imbd;
 	}
+
 	public void setImbd(IMDB imbd) {
 		this.imbd = imbd;
 	}
+
 	public Type getType() {
 		return type;
 	}
+
 	public void setType(Type type) {
 		this.type = type;
 	}

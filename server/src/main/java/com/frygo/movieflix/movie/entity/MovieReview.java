@@ -15,20 +15,28 @@ import com.frygo.movieflix.user.entity.User;
 @Entity
 @Table
 public class MovieReview {
+	MovieReview(){
+		
+	}
+	MovieReview(String newid, String newuser, String newcomment, Integer newrate){
+		this.id = newid;
+		this.user = newuser;
+		this.comment = newcomment;
+		this.rate = newrate;
+		
+	}
 	@Id
 	@GenericGenerator(name = "customUUID", strategy = "uuid2")
 	@GeneratedValue(generator = "customUUID")
 	@JsonIgnore
 	private String id;
-
-	@ManyToOne(cascade = {CascadeType.ALL})
-	private User user;
 	
+	private String user;
 
 	private String comment;
 
 	private Integer rate;
-	
+
 	public String getId() {
 		return id;
 	}
@@ -37,11 +45,11 @@ public class MovieReview {
 		this.id = id;
 	}
 
-	public User getUser() {
+	public String getUser() {
 		return user;
 	}
 
-	public void setUser(User user) {
+	public void setUser(String user) {
 		this.user = user;
 	}
 

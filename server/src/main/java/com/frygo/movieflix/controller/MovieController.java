@@ -37,6 +37,7 @@ public class MovieController{
 	public Movie create(@RequestBody Movie movie){
 		return service.create(movie);
 	}
+	
 	@RequestMapping(method=RequestMethod.PUT,path="{id}",produces=MediaType.APPLICATION_JSON_UTF8_VALUE,consumes=MediaType.APPLICATION_JSON_UTF8_VALUE)
 	public Movie update(@PathVariable("id") String id, @RequestBody Movie movie){
 		return service.update(id, movie);
