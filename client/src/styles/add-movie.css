@@ -1,0 +1,12 @@
+.add-movie{
+    padding:100px;
+}
+.add-movie input{
+    display:inline;
+
+}
+.error{
+    margin:0px;
+    color:red;
+    font-size:1em!important;
+}

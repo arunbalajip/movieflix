@@ -1,0 +1,34 @@
+.title-block{
+    float:right;
+}
+.movie-details{
+   padding-top:70px;
+}
+.panel-heading h3,h4{
+    display: inline;
+}
+.panel-body p{
+    font-size:1.25em;
+}
+.panel-heading img{
+    width: 25px;
+    height: 20px;
+}
+.panel-body img{
+    float:right;
+    width:300px;
+    padding-right:10px;
+}
+.movie-details button,input{
+    margin-top: 10px;
+}
+.textarea{
+    height:100px;
+    overflow: scroll;
+}
+#update{
+    cursor:pointer;
+    text-decoration-line: underline;
+
+}
+

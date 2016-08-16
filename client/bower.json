@@ -1,0 +1,39 @@
+{
+  "name": "movieflix",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "arunbalajip"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.5.8",
+    "angular-route": "^1.5.8",
+    "angular-jwt": "^0.1.0",
+    "angular-messages": "^1.5.8",
+    "auth0-angular": "^4.2.3",
+    "auth0-lock": "^9.0.0",
+    "bootstrap-css-only": "^3.3.6",
+    "bower": "*",
+    "install": "^1.0.4",
+    "a0-angular-storage": "^0.0.15",
+    "font-awesome": "^4.6.3",
+    "lodash": "^4.15.0"
+  },
+  "overrides": {
+    "font-awesome": {
+      "main": [
+        "css/font-awesome.min.css"
+      ]
+    }
+  }
+}

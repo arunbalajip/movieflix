@@ -1,0 +1,50 @@
+movielist * {
+    padding-top: 0;
+}
+
+.imbdbadge {
+    background-color: blueviolet;
+    left: 0;
+    top: 20px;
+    opacity: 1;
+    z-index: 1;
+    color: white;
+    padding: 4px;
+    position: absolute;
+    font-weight: 500;
+}
+
+.imbdbadge img {
+    width: 25px;
+    height: 20px;
+    padding-right: 5px;
+}
+
+.thumbnail {
+    background-image: url("../images/defaultmovie.jpg");
+    background-size: middle;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    height: 400px;
+    width: auto;
+    cursor: pointer;
+}
+
+.newbadge {
+
+    right: 5px;
+    top: 5px;
+    z-index: 1;
+    padding: 4px;
+    position: absolute;
+    font-size: 1.5em;
+    color: white;
+    cursor: pointer;
+
+}
+
+.col-xs-6 ,.col-sm-4,.col-md-3{
+    padding:5px;
+    height: 410px;
+}
+
