@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="MovieFlix">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>MovieFlix</title>
+
+    <!-- bower:css -->
+    <link rel="stylesheet" href="/bower_components/bootstrap-css-only/css/bootstrap.css">
+    <link rel="stylesheet" href="/bower_components/font-awesome/css/font-awesome.min.css">
+    <!-- endinject -->
+
+    <!-- vendor:css -->
+    <!-- endinject -->
+
+    <!-- inject:css -->
+    <link rel="stylesheet" href="styles/add-movie.css">
+    <link rel="stylesheet" href="styles/common.css">
+    <link rel="stylesheet" href="styles/footer.css">
+    <link rel="stylesheet" href="styles/header.css">
+    <link rel="stylesheet" href="styles/movie-detail.css">
+    <link rel="stylesheet" href="styles/movielist.css">
+    <link rel="stylesheet" href="styles/section.css">
+    <!-- endinject -->
+
+    <!-- app:css -->
+    <!-- endinject -->
+
+
+
+
+
+</head>
+<body>
+<header ng-include="'app/views/toolbar.tmpl.html'"></header>
+<div ng-view=""></div>
+
+<footer>
+    <span>2016 &copy; MovieFlix, Inc.</span>
+    <span class="logo">MovieFlix.com</span>
+</footer>
+
+<!-- bower:js -->
+<script src="/bower_components/angular/angular.js"></script>
+<script src="/bower_components/angular-route/angular-route.js"></script>
+<script src="/bower_components/angular-jwt/dist/angular-jwt.js"></script>
+<script src="/bower_components/angular-messages/angular-messages.js"></script>
+<script src="/bower_components/auth0-lock/build/auth0-lock.js"></script>
+<script src="/bower_components/auth0.js/build/auth0.js"></script>
+<script src="/bower_components/install/detect-zoom.js"></script>
+<script src="/bower_components/a0-angular-storage/dist/angular-storage.js"></script>
+<script src="/bower_components/lodash/lodash.js"></script>
+<script src="/bower_components/auth0-angular/build/auth0-angular.js"></script>
+<!-- endinject -->
+
+<!-- vendor:js -->
+<!-- endinject -->
+
+<!-- inject:js -->
+<script src="app/app.js"></script>
+<script src="app/services/user.service.js"></script>
+<script src="app/services/movie.service.js"></script>
+<script src="app/filter/ifEmpty.js"></script>
+<script src="app/directives/thumb-nail.directive.js"></script>
+<script src="app/directives/movie-block.directive.js"></script>
+<script src="app/controllers/toolbar.controller.js"></script>
+<script src="app/controllers/movie-list.controller.js"></script>
+<script src="app/controllers/movie-detail.controller.js"></script>
+<script src="app/controllers/add-movie.controller.js"></script>
+<!-- endinject -->
+
+<!-- app:js -->
+<!-- endinject -->
+
+
+</body>
+</html>

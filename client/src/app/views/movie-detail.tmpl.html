@@ -1,0 +1,206 @@
+<div class="movie-details">
+    <div class="container">
+        <div class="panel panel-default">
+            <div class="panel-heading  ">
+                <h3 class="panel-title "><strong>{{movieDetailVm.movie.title}}</strong></h3>
+
+                <div class=" panel-title title-block">
+                    <h4 id="update" ng-show="movieDetailVm.isAdmin"
+                        ng-click="movieDetailVm.isUpdate=!movieDetailVm.isUpdate">Update</h4>
+                    <h4 ng-show="movieDetailVm.isAdmin">|</h4>
+                    <h4 class=""><img src="images/imbdstar.png"/>{{movieDetailVm.movie.imbd.imdbRating}}/10</h4>
+                    <h4>|</h4>
+                    <h4>{{movieDetailVm.movie.year}}</h4>
+                    <h4>|</h4>
+                    <h4>{{movieDetailVm.movie.rated}}</h4>
+                    <h4>|</h4>
+                    <h4>{{movieDetailVm.movie.genres}}</h4>
+                    <h4>|</h4>
+                    <h4>{{movieDetailVm.movie.type.value}}</h4>
+
+                </div>
+            </div>
+
+            <div class="panel-body">
+                <form name="updateMovie" novalidate>
+                    <div class="row">
+
+                        <img ng-src="{{movieDetailVm.movie.imbd.poster}}"/>
+                        <div class="col-sm-8">
+
+                            <p><strong>Title</strong>:
+                                <span ng-show="!movieDetailVm.isUpdate">
+                                    {{movieDetailVm.movie.title}}
+                                </span>
+                                <span ng-hide="!movieDetailVm.isUpdate">
+                                <input type="text" name="title" ng-model="movieDetailVm.movie.title" required>
+                                    <div ng-if="updateMovie.title.$dirty" ng-messages="updateMovie.title.$error">
+                            <p ng-message="required" class="error">Movie title is required</p>
+                        </div>
+                        </span>
+                        </p>
+
+                        <p><strong>Year</strong>:
+                            <span ng-show="!movieDetailVm.isUpdate">
+                                    {{movieDetailVm.movie.year}}
+                                </span>
+                            <span ng-hide="!movieDetailVm.isUpdate">
+                                    <input type="number" name="year" ng-model="movieDetailVm.movie.year" required
+                                           min="1900" max="2016">
+                                    <div ng-if="updateMovie.year.$dirty" ng-messages="updateMovie.year.$error">
+                        <p ng-message="required" class="error">Year is required</p>
+                        <p ng-message="min" class="error">Year can't be below 1900</p>
+                        <p ng-message="max" class="error">Year can't be above 2016</p>
+                    </div>
+                    </span>
+                    </p>
+
+                    <p><strong>Type</strong>:
+                        <span
+                                ng-show="!movieDetailVm.isUpdate"> {{movieDetailVm.movie.type.value}}</span>
+                        <span ng-hide="!movieDetailVm.isUpdate">
+                                <select class="form-control" ng-model="movieDetailVm.movie.type.value" name="type"
+                                        required>
+                                     <option value="movie">Movie</option>
+                                     <option value="series">TV shows</option>
+                                </select>
+                                <div ng-if="updateMovie.type.$dirty" ng-messages="updateMovie.type.$error">
+                    <p ng-message="required" class="error">Type is required</p>
+            </div>
+            </span>
+            </p>
+
+            <p><strong>Genre</strong>:
+                <span ng-show="!movieDetailVm.isUpdate"> {{movieDetailVm.movie.genres}}</span>
+                <span ng-hide="!movieDetailVm.isUpdate">
+                                <input type="text" name="genres" ng-model="movieDetailVm.movie.genres" required>
+                                <div ng-if="updateMovie.genres.$dirty" ng-messages="updateMovie.genres.$error">
+            <p ng-message="required" class="error">Genre is required</p>
+        </div>
+        </span>
+        </p>
+
+        <p><strong>Director</strong>:
+            <span ng-show="!movieDetailVm.isUpdate"> {{movieDetailVm.movie.cast.director}}</span>
+            <span ng-hide="!movieDetailVm.isUpdate">
+                                <input type="text" name="director" ng-model="movieDetailVm.movie.cast.director"
+                                       required>
+                                <div ng-if="updateMovie.director.$dirty" ng-messages="updateMovie.director.$error">
+        <p ng-message="required" class="error">Director is required</p>
+    </div>
+    </span>
+    </p>
+    <p><strong>Writer</strong>:
+        <span ng-show="!movieDetailVm.isUpdate">  {{movieDetailVm.movie.cast.writers}}</span>
+        <span ng-hide="!movieDetailVm.isUpdate">
+                                <input type="text" name="writers" ng-model="movieDetailVm.movie.cast.writers" required>
+                                        <div ng-if="updateMovie.writers.$dirty"
+                                             ng-messages="updateMovie.writers.$error">
+    <p ng-message="required" class="error">Writer is required</p>
+</div>
+</span>
+</p>
+<p><strong>Actors</strong>:
+    <span ng-show="!movieDetailVm.isUpdate">  {{movieDetailVm.movie.cast.actors}}</span>
+    <span ng-hide="!movieDetailVm.isUpdate">
+                                <input type="text" name="actors" ng-model="movieDetailVm.movie.cast.actors" required>
+                                <div ng-if="updateMovie.actors.$dirty" ng-messages="updateMovie.actors.$error">
+<p ng-message="required" class="error">Actors are required</p>
+</div>
+</span>
+
+</p>
+<p><strong>Countries</strong>:
+    <span ng-show="!movieDetailVm.isUpdate">   {{movieDetailVm.movie.countries.value}}</span>
+    <span ng-hide="!movieDetailVm.isUpdate">
+                                <input type="text" name="countries" ng-model="movieDetailVm.movie.countries.value"
+                                       required>
+
+                                <div ng-if="updateMovie.countries.$dirty" ng-messages="updateMovie.countries.$error">
+<p ng-message="required" class="error">Countries are required</p>
+</div>
+</span>
+</p>
+<p><strong>Languages</strong>:
+    <span ng-show="!movieDetailVm.isUpdate">  {{movieDetailVm.movie.languages.value}}</span>
+    <span ng-hide="!movieDetailVm.isUpdate">
+                                <input type="text" name="languages" ng-model="movieDetailVm.movie.languages.value"
+                                       required>
+
+                                <div ng-if="updateMovie.languages.$dirty" ng-messages="updateMovie.languages.$error">
+<p ng-message="required" class="error">Countries are required</p>
+</div>
+</span>
+
+</p>
+<p><strong>imdbRating</strong>:
+    <span ng-show="!movieDetailVm.isUpdate">  {{movieDetailVm.movie.imbd.imdbRating}}/10</span>
+    <span ng-hide="!movieDetailVm.isUpdate">
+                                <input name="imdbRating" type="text" ng-model="movieDetailVm.movie.imbd.imdbRating"
+                                       required min="0" max="10" required>
+
+                                <div ng-if="updateMovie.imdbRating.$dirty" ng-messages="updateMovie.imdbRating.$error">
+<p ng-message="required" class="error">Countries are required</p>
+<p ng-message="min" class="error">imdb rating can't be below 0</p>
+<p ng-message="max" class="error">imdb rating can't be above 10</p>
+</div>
+</span>
+</p>
+<p><strong>imdbVotes</strong>:
+    <span ng-show="!movieDetailVm.isUpdate"> {{movieDetailVm.movie.imbd.imdbVotes}}</span>
+    <span ng-hide="!movieDetailVm.isUpdate">
+                                <input name="imdbVotes" type="text" ng-model="movieDetailVm.movie.imbd.imdbVotes"
+                                       required>
+
+                                <div ng-if="updateMovie.imdbVotes.$dirty" ng-messages="updateMovie.imdbVotes.$error">
+<p ng-message="required" class="error">imdbVotes are required</p>
+</div>
+</span>
+</p>
+
+
+<p><strong>imdbLink</strong>:<a
+        href="http://www.imdb.com/title/{{movieDetailVm.movie.imbd.imdbID}}">Link to imdb
+    page</a></p>
+<button type="button"
+        ng-show="movieDetailVm.isAdmin"
+        ng-click="movieDetailVm.updateMovie(updateMovie)"
+        class="btn btn-primary">Update
+</button>
+</form>
+<p><strong>User Reviews</strong></p>
+<div class="form-control textarea" rows="5" readonly>
+    <p ng-repeat="userreview in movieDetailVm.movie.userreviews">
+        {{userreview.user}}:{{userreview.comment}}(Rate:{{userreview.rate}}/10)
+    </p>
+</div>
+
+<form name="userReviewForm" novalidate>
+    <input type="text" class="form-control" placeholder="User Comments" name="userComments"
+           required ng-model="movieDetailVm.newuserComments.comment">
+    <div ng-if="userReviewForm.userComments.$dirty"
+         ng-messages="userReviewForm.userComments.$error">
+        <p ng-message="required" class="error">User Comment is required</p>
+    </div>
+    <input type="number" name="userRating" class="form-control" placeholder="User Rating" min="0" max="10"
+           name="userRating" ng-model="movieDetailVm.newuserComments.rate" required>
+    <div ng-if="userReviewForm.userRating.$dirty"
+         ng-messages="userReviewForm.userRating.$error">
+        <p ng-message="required" class="error"> User Rating is required </p>
+        <p ng-message="min" class="error"> User Rating can go below 0 </p>
+        <p ng-message="max" class="error"> User Rating can go above 10 </p>
+    </div>
+    <button type="button" ng-disabled="userReviewForm.$invalid"
+            ng-click="movieDetailVm.updateMovie(userReviewForm)" class="btn btn-primary">Submit
+        Review
+    </button>
+</form>
+
+
+</div>
+
+</div>
+</form>
+</div>
+</div>
+</div>

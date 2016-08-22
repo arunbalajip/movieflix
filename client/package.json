@@ -1,0 +1,21 @@
+{
+  "name": "movieflix",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "author": "arunbalajip",
+  "license": "MIT",
+  "devDependencies": {
+    "browser-sync": "^2.12.5",
+    "gulp": "^3.9.1",
+    "gulp-angular-filesort": "^1.1.1",
+    "gulp-clean": "^0.3.2",
+    "gulp-clean-css": "^2.0.6",
+    "gulp-concat": "^2.6.0",
+    "gulp-filter": "^4.0.0",
+    "gulp-inject": "^4.0.0",
+    "gulp-uglify": "^1.5.3",
+    "main-bower-files": "^2.13.0",
+    "merge-stream": "^1.0.0"
+  }
+}

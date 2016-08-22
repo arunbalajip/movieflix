@@ -1,0 +1,29 @@
+<div class="header" ng-controller="ToolBarController as toolBarVm">
+    <span class="logo">MovieFlix.com</span>
+    <span id="caption"> THE WORLD'S LARGEST ENTERTAINMENT SITE </span>
+    <nav>
+        <a href="index.html">
+            <span class="fa fa-home icon positionitem" aria-hidden="true"></span>
+        </a>
+        <span ng-show="toolBarVm.isAdmin">
+        <a href="#/add-movie">
+
+            <span class="fa fa-plus icon positionitem" aria-hidden="true"></span>
+            <span class="menu">Add new Movie</span>
+        </a>
+        </span>
+        <!--        <i class="fa fa-television icon  positionitem" aria-hidden="true"></i>
+                <span class="menu">Tv Series</span>-->
+        <span ng-show="toolBarVm.userSignButton">
+          <span class="fa fa-lock icon usericon" aria-hidden="true" ng-click="toolBarVm.logout()"></span>
+          <span class="icon usericon menu positionitem" ng-click="toolBarVm.logout()">Logout</span>
+         <span class="fa fa-user icon usericon" aria-hidden="true"></span>
+         <span class="icon usericon menu positionitem">{{toolBarVm.username}}</span>
+        </span>
+        <span ng-hide="toolBarVm.userSignButton">
+        <span class="fa fa-key icon usericon" aria-hidden="true"></span>
+        <span class="icon usericon menu positionitem" ng-click="toolBarVm.login()">Login</span>
+        </span>
+
+    </nav>
+</div>

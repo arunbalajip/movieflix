@@ -1,0 +1,13 @@
+<div class="movie-block">
+    <div class="col-xs-6 col-sm-4 col-md-3">
+
+        <thumb-nail img-src="{{movie.imbd.poster}}" mov-id="{{movie.id}}" class="thumbnail" title="{{movie.title}}"></thumb-nail>
+        <div class="imbdbadge">
+            <img src="images/imbdstar.png"/>{{movie.imbd.imdbRating}}/10 <br/>
+            {{movie.imbd.imdbVotes}}
+        </div>
+        <a ng-show="movieVm.isAdmin" ng-click="movieVm.deleteMovie(movie.id)">
+            <div class="newbadge fa fa-times"></div>
+        </a>
+    </div>
+</div>

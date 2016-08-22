@@ -1,0 +1,33 @@
+<div>
+    <section>
+        <button type="button" class="btn btn-primary" ng-click="movieVm.topRatedMovies()">Top Rated Movies</button>
+        <button type="button" class="btn btn-info" ng-click="movieVm.topRatedSeries()">Top Rated TV Series</button>
+        <select class="form-control" ng-model="movieVm.searchText.type.value">
+            <option value="movie">Movies</option>
+            <option value="series">Tv Shows</option>
+        </select>
+        <input type="text" class="form-control" placeholder="Search By Year" ng-model="movieVm.searchText.year">
+        <input type="text" class="form-control" placeholder="Search By Genre" ng-model="movieVm.searchText.genres">
+        <input type="text" class="form-control" placeholder="Free text" ng-model="movieVm.searchText">
+        <select class="form-control" ng-model="movieVm.sorter.sortBy">
+            <option value="title">Sort by</option>
+            <option value="imdb.imdbRating">IMDB Rating</option>
+            <option value="year">Year</option>
+            <option value="imdb.imdbVotes">IMDB Votes</option>
+        </select>
+    </section>
+    <aside>
+
+        <div class="container">
+
+
+                <div class="row1" ng-repeat="movie in movieVm.movies | filter: movieVm.searchText |orderBy: movieVm.sorter.sortBy: movieVm.sorter.sortOrder">
+
+                    <movie-block movie="movie" movie-Vm="movieVm"></movie-block>
+                </div>
+
+
+        </div>
+
+    </aside>
+</div>
